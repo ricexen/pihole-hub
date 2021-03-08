@@ -1,0 +1,1 @@
+SELECT id FROM adlist WHERE address IN ($addresses)
