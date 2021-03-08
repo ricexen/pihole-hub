@@ -1,6 +1,6 @@
-55 22 * * * /home/sonido/.dotfiles/.block-entretaiment
-0 0 * * 0,6 /home/sonido/.dotfiles/.allow-entretaiment
-0 6 * * 1-5 /home/sonido/.dotfiles/.block-entretaiment
-25 13 * * 1-5 /home/sonido/.dotfiles/.allow-entretaiment
-55 14 * * 1-5 /home/sonido/.dotfiles/.block-entretaiment
-55 17 * * 1-5 /home/sonido/.dotfiles/.allow-entretaiment
+55 22 * * * /home/sonido/services/pihole/block-entretaiment
+0 0 * * 0,6 /home/sonido/services/pihole/allow-entretaiment
+0 6 * * 1-5 /home/sonido/services/pihole/block-entretaiment
+25 13 * * 1-5 /home/sonido/services/pihole/allow-entretaiment
+55 14 * * 1-5 /home/sonido/services/pihole/block-entretaiment
+55 17 * * 1-5 /home/sonido/services/pihole/allow-entretaiment
