@@ -1,9 +1,7 @@
-query=$(cat <<EOF 
+sqlite3 /etc/pihole/gravity.db <<EOS 
 CREATE TEMP TABLE i(txt);
 .separator ~
 .import $1 i
-DELETE OR IGNORE INTO adlist (address) SELECT txt FROM i;
-DROP TABLE i";
-EOF
-)
-sqlite /etc/pihole/gravity.db "$query"
+DELETE FROM adlist WHERE address in (SELECT txt FROM i);
+DROP TABLE i;
+EOS
