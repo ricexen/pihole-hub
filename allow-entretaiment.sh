@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo /home/sonido/services/pihole/remove_from_txt.sh /home/sonido/services/pihole/url-lists/entretaiment.list
-/usr/local/bin/pihole -g
+sudo /app/remove_from_txt.sh /app/url-lists/entretaiment.list
+sudo /app/rc.sh
