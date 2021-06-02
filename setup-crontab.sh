@@ -1,2 +1,2 @@
 #!/bin/bash
-cat .pihole-cron | sudo crontab -
+cat /app/.pihole-cron | sudo crontab -

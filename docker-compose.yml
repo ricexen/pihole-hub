@@ -17,7 +17,6 @@ services:
       - "443:443/tcp"
     environment:
       TZ: 'America/Tijuana'
-      WEBPASSWORD: 'admin@123'
       IPv6: 'true'
       PIHOLE_DNS_: '10.0.0.2#5053;1.1.1.1'
     volumes:
