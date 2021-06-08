@@ -19,6 +19,8 @@ services:
       TZ: 'America/Tijuana'
       IPv6: 'true'
       PIHOLE_DNS_: '10.0.0.2#5053;1.1.1.1'
+      ServerIP: ${ServerIPv4}
+      ServerIPv6: ${ServerIPv6}
     volumes:
       - '.:/app'
       - './etc-pihole/:/etc/pihole/'
