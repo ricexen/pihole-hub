@@ -25,4 +25,5 @@ services:
       - '.:/app'
       - './etc-pihole/:/etc/pihole/'
       - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+      - './resolv.conf:/etc/resolv.conf:ro'
     restart: unless-stopped
