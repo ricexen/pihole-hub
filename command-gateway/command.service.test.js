@@ -35,8 +35,8 @@ test.each`
 
 test.each`
     command | terminalCommand | args
-    ${'allow'}   | ${'ssh'} | ${'personal docker exec pihole ./app/allow-entretaiment.sh'.split(' ')}
-    ${'block'}   | ${'ssh'} | ${'personal docker exec pihole ./app/block-entretaiment.sh'.split(' ')}
+    ${'allow'}   | ${'ssh'} | ${`secure_target docker exec pihole ./app/allow-entretaiment.sh`.split(' ')}
+    ${'block'}   | ${'ssh'} | ${`secure_target docker exec pihole ./app/block-entretaiment.sh`.split(' ')}
 `("on $command command should call terminal service with '$terminalCommand'", async ({ command, terminalCommand, args }) => {
     await CommandService(command)
 
