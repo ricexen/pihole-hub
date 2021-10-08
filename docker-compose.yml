@@ -3,7 +3,6 @@ version: "3"
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
 services:
   pihole:
-    container_name: pihole
     image: pihole/pihole:latest
     ports:
       - "53:53/tcp"
@@ -15,15 +14,35 @@ services:
       - "4711:4711/udp"
       - "80:80/tcp"
       - "443:443/tcp"
+      - "22"
     environment:
-      TZ: 'America/Tijuana'
-      IPv6: 'true'
-      PIHOLE_DNS_: '10.0.0.2#5053;1.1.1.1'
+      TZ: "America/Tijuana"
+      IPv6: "true"
+      PIHOLE_DNS_: "10.0.0.2#5053;1.1.1.1"
       ServerIP: ${ServerIPv4}
       ServerIPv6: ${ServerIPv6}
     volumes:
-      - '.:/app'
-      - './etc-pihole/:/etc/pihole/'
-      - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
-      - './resolv.conf:/etc/resolv.conf:ro'
+      - ".:/app"
+      - "./etc-pihole/:/etc/pihole/"
+      - "./etc-dnsmasq.d/:/etc/dnsmasq.d/"
+      - "./resolv.conf:/etc/resolv.conf:ro"
     restart: unless-stopped
+    networks:
+      - internal
+  pihole-gateway:
+    build:
+      context: ./gateway
+    environment:
+      TZ: "America/Tijuana"
+      SSH_TARGET: root@pihole
+      PORT: 3000
+    depends_on:
+      - pihole
+    networks:
+      - pomodoro-net
+      - internal
+
+networks:
+  internal:
+  pomodoro-net:
+    external: true
