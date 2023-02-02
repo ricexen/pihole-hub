@@ -3,7 +3,7 @@ version: "3"
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
 services:
   pihole:
-    image: pihole/pihole:latest
+    image: pihole/pihole:2022.09.4
     ports:
       - "53:53/tcp"
       - "53:53/udp"
@@ -22,27 +22,9 @@ services:
       ServerIP: ${ServerIPv4}
       ServerIPv6: ${ServerIPv6}
     volumes:
-      - ".:/app"
+      - "./scripts:/scripts"
+      - "./url-lists:/url-lists"
       - "./etc-pihole/:/etc/pihole/"
       - "./etc-dnsmasq.d/:/etc/dnsmasq.d/"
       - "./resolv.conf:/etc/resolv.conf:ro"
     restart: unless-stopped
-    networks:
-      - internal
-  pihole-gateway:
-    build:
-      context: ./gateway
-    environment:
-      TZ: "America/Tijuana"
-      SSH_TARGET: root@pihole
-      PORT: 3000
-    depends_on:
-      - pihole
-    networks:
-      - pomodoro-net
-      - internal
-
-networks:
-  internal:
-  pomodoro-net:
-    external: true

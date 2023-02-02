@@ -1,5 +1,0 @@
-.dockerignore
-Dockerfile
-jsconfig.json
-jest.config.js
-node_modules
