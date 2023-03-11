@@ -1,6 +1,6 @@
 https://raw.githubusercontent.com/imkarthikk/pihole-facebook/master/pihole-facebook.txt
 https://github.com/gieljnssns/Social-media-Blocklists/blob/master/pihole-instagram.txt
-https://raw.githubusercontent.com/gieljnssns/Social-media-Blocklists/master/pihole-tiktok.txt
+#https://raw.githubusercontent.com/gieljnssns/Social-media-Blocklists/master/pihole-tiktok.txt
 https://gist.githubusercontent.com/ricexen/93b3ead4cb227bb5a6c7bdff976033a0/raw/b6fbf0b1095743e31706b0d4d16017faf39839dd/netflix.txt
 https://gist.githubusercontent.com/ricexen/9b484e1b20a029e2b8c3bb78a126026c/raw/996c082f15d5bf0dc3a24ba2c4ad37d23b0e74d9/twitch.txt
 https://raw.githubusercontent.com/crpietschmann/pi-hole-blocklist/main/blocklist-social-all.txt
