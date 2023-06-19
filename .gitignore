@@ -1,3 +1,4 @@
 /etc*
 .pihole-cron
 .env
+.bak
